@@ -63,7 +63,7 @@ public class SearchOrderByDateDialog extends JDialog {
         ArrayList<OrderModel> orders = FindOrderByDate.getOrders(targetDate);
         if (orders.size() == 0) {
             showMessageDialog(null,
-                    "Order on this date:: \n" + targetDate + '\n'
+                    "Order on this date: \n" + targetDate + '\n'
                     + "Cannot be found, please adjust your query.",
                     "Warning", JOptionPane.WARNING_MESSAGE);
             return;
