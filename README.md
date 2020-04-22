@@ -1,4 +1,6 @@
 # OrderManager
+[![time tracker](https://wakatime.com/badge/github/ssysm/OrderManager.svg)](https://wakatime.com/badge/github/ssysm/OrderManager)
+
 A Java Order System Manager
 
 ## Requirements & Running
