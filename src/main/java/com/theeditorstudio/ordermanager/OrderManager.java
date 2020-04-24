@@ -20,7 +20,7 @@ public class OrderManager extends JFrame {
     /** Set Global Variable */
     public static JFrame frame = new JFrame();
     public static JTable table = new JTable(new OrderTableModel());
-    public static ArrayList<OrderModel> orderModelArrayList = new ArrayList<OrderModel>();
+    public static ArrayList<OrderModel> orderModelArrayList = new ArrayList<>();
     public static boolean isModified = false;
     public static File currentFile = new File("order.csv");
     public static JLabel status =  new JLabel("Order Manager");
@@ -42,7 +42,7 @@ public class OrderManager extends JFrame {
 
     private void run(){
         // Set Frame Options
-        frame.setMinimumSize(new Dimension(640, 480));
+        frame.setMinimumSize(new Dimension(700, 500));
         frame.setSize(700,500);
         frame.setTitle("Order Manager");
         frame.setLayout(new BorderLayout());

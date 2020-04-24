@@ -7,9 +7,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OrderDetailDialog {
-    JDialog detailDialog = null;
-    JLabel label = null;
-    OrderModel order = null;
+    JDialog detailDialog;
+    JLabel label;
+    OrderModel order;
 
     public OrderDetailDialog(OrderModel order){
         this.order = order;

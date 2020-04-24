@@ -42,62 +42,41 @@ public class OrderCreateDialog extends JDialog {
 
         quantity.addKeyListener(new KeyListener() {
             @Override
-            public void keyTyped(KeyEvent e) { }
+            public void keyTyped(KeyEvent e) {
+            }
 
             @Override
-            public void keyPressed(KeyEvent e) { }
+            public void keyPressed(KeyEvent e) {
+            }
 
             @Override
             public void keyReleased(KeyEvent e) {
-                if (!itemPrice.getText().isEmpty() && !quantity.getText().isEmpty()
-                    && itemPrice.isValid() && quantity.isValid()) {
-                    orderTotal.setText(String.format("%.2f",
-                            (Double.parseDouble(itemPrice.getText())
-                             * Integer.parseInt(quantity.getText()))));
-                } else {
-                    orderTotal.setText("NaN");
-                }
+                setOrderTotal();
             }
 
         });
 
         itemPrice.addKeyListener(new KeyListener() {
             @Override
-            public void keyTyped(KeyEvent e) { }
+            public void keyTyped(KeyEvent e) {
+            }
+
             @Override
-            public void keyPressed(KeyEvent e) { }
+            public void keyPressed(KeyEvent e) {
+            }
+
             @Override
             public void keyReleased(KeyEvent e) {
-                if (!itemPrice.getText().isEmpty() && !quantity.getText().isEmpty()
-                    && itemPrice.isValid() && quantity.isValid()) {
-                    orderTotal.setText(String.format("%.2f",
-                            (Double.parseDouble(itemPrice.getText()) *
-                             Integer.parseInt(quantity.getText()))));
-                } else {
-                    orderTotal.setText("NaN");
-                }
+                setOrderTotal();
             }
         });
 
 
-        todayBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                orderDate.setText(LocalDate.now().toString());
-            }
-        });
+        todayBtn.addActionListener(e -> orderDate.setText(LocalDate.now().toString()));
 
-        buttonOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onOK();
-            }
-        });
+        buttonOK.addActionListener(e -> onOK());
 
-        buttonCancel.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        });
+        buttonCancel.addActionListener(e -> onCancel());
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -108,16 +87,23 @@ public class OrderCreateDialog extends JDialog {
         });
 
         // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
+        contentPane.registerKeyboardAction(e -> onCancel(),
+                KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0),
                 JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
         orderID.setText(RandomIDGenerator.getRandomID());
     }
 
+    private void setOrderTotal() {
+        if (!itemPrice.getText().isEmpty() && !quantity.getText().isEmpty()
+            && itemPrice.isValid() && quantity.isValid()) {
+            orderTotal.setText(String.format("%.2f",
+                    (Double.parseDouble(itemPrice.getText())
+                     * Integer.parseInt(quantity.getText()))));
+        } else {
+            orderTotal.setText("NaN");
+        }
+    }
 
     private void onOK() {
         try {
@@ -130,7 +116,7 @@ public class OrderCreateDialog extends JDialog {
                     Integer.valueOf(quantity.getText()),
                     Double.valueOf(itemPrice.getText())
             ));
-            OrderManager.table.setModel(new OrderTableModel(OrderManager.orderModelArrayList));
+            OrderManager.table.setModel(new OrderTableModel(OrderManager.orderModelArrayList)); // Reset Table Model
             OrderManager.isModified = true;
             StatusComponent.updateStatus();
             dispose();
@@ -251,3 +237,4 @@ public class OrderCreateDialog extends JDialog {
     }
 
 }
+

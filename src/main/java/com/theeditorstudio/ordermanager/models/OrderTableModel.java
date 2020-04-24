@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class OrderTableModel extends AbstractTableModel {
 
-    ArrayList<OrderModel> orderModelArrayList = new ArrayList<OrderModel>();
+    ArrayList<OrderModel> orderModelArrayList = new ArrayList<>();
 
     public OrderTableModel() {
         OrderManager.orderModelArrayList = orderModelArrayList;

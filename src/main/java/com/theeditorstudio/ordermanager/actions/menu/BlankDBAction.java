@@ -36,7 +36,7 @@ public class BlankDBAction implements ActionListener {
                 return;
             }
         }
-        OrderManager.orderModelArrayList = new ArrayList<OrderModel>();
+        OrderManager.orderModelArrayList = new ArrayList<>();
         OrderManager.table.setModel(new OrderTableModel());
         OrderManager.isModified = false;
         StatusComponent.updateStatus();

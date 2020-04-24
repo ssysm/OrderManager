@@ -3,15 +3,14 @@ package com.theeditorstudio.ordermanager.utils.searchs;
 import com.theeditorstudio.ordermanager.OrderManager;
 import com.theeditorstudio.ordermanager.models.OrderModel;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class FindOrderByDate {
+public class FindOrderByName {
 
-    public static ArrayList<OrderModel> getOrders(LocalDate date){
-        ArrayList<OrderModel> orders = new ArrayList<OrderModel>();
+    public static ArrayList<OrderModel> getOrders(String fname, String lname){
+        ArrayList<OrderModel> orders = new ArrayList<>();
         for (OrderModel order : OrderManager.orderModelArrayList){
-            if(order.getCreateDate().isEqual(date)){
+            if(order.getFirstName().equals(fname) && order.getLastName().equals(lname)){
                 orders.add(order);
             }
         }

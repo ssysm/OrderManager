@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: com.theeditorstudio.ordermanager.OrderManager
-Created-By: Alpha 0.0.1_1 (Shengming Yuan)
-Name: CSV Order Manager

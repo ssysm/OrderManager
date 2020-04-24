@@ -23,7 +23,7 @@ import static javax.swing.JOptionPane.ERROR_MESSAGE;
 public class OrderParser {
 
     private String filename;
-    private ArrayList<OrderModel> orderModels = new ArrayList<OrderModel>();
+    private ArrayList<OrderModel> orderModels = new ArrayList<>();
 
     public OrderParser(String filename){
         this.filename = filename;
