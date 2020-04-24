@@ -1,4 +1,4 @@
-# OrderManager
+# Order Manager
 [![time tracker](https://wakatime.com/badge/github/ssysm/OrderManager.svg)](https://wakatime.com/badge/github/ssysm/OrderManager)
 [![Build Status](https://travis-ci.org/ssysm/OrderManager.svg?branch=master)](https://travis-ci.org/ssysm/OrderManager)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d8a132847042f1682439/maintainability)](https://codeclimate.com/github/ssysm/OrderManager/maintainability)
@@ -14,7 +14,7 @@ To run, [download](https://github.com/ssysm/OrderManager/releases) the latest ve
 your self.
 
 ## Development Instructions
-###Run@Intellij:
+### Run@Intellij:
  
 Requirements:
 - Java 11 SDK
@@ -26,14 +26,12 @@ Steps:
 1. Navigate to [`OrderManager.java`](src/main/java/com/theeditorstudio/ordermanager/OrderManager.java)
 1. Run `OrderManager.main()`
 
-###Build@Maven
+### Build@Maven
 
 Requirements:
-- Java 11 SDK
 - Maven 3.3
 
 Steps:
-1. Clone this repo.
 1. `maven package`
 
 Build jar file located at `target/OrderManager[-jar-with-dependencies].jar`
