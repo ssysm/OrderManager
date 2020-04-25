@@ -5,13 +5,15 @@
 
 A Java Order System Manager
 
+![Splash Screen](src/main/resources/splash.png)
+
 ## Requirements & Running
 
 Requirements:
 - Java 11(or later)
 
-To run, [download](https://github.com/ssysm/OrderManager/releases) the latest version of the jar file or [build](#Development-Instructions) it
-your self.
+To run, [download](https://github.com/ssysm/OrderManager/releases) the latest version of the jar file or 
+[build](#Development-Instructions) ityour self.
 
 ## Development Instructions
 ### Run@Intellij:
@@ -25,6 +27,8 @@ Steps:
 1. Open in Intellij Idea
 1. Navigate to [`OrderManager.java`](src/main/java/com/theeditorstudio/ordermanager/OrderManager.java)
 1. Run `OrderManager.main()`
+
+Note: Under development, the build number will not show up.
 
 ### Build@Maven
 
@@ -67,7 +71,3 @@ only searching helper functions.
 ### [`com.theeditorstudio.ordermanager.windows`](src/main/java/com/theeditorstudio/ordermanager/windows)
 This package contains all additional window/dialog that will be used 
 in this program. The `searchs` sub-package contains only searching windows.
-
-
-
-
