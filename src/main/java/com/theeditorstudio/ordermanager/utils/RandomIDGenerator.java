@@ -13,12 +13,12 @@ public class RandomIDGenerator {
      * @return String random id
      */
     public static String getRandomID(){
-        StringBuilder salt = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         Random rnd = new Random();
-        while (salt.length() < 4) {
+        while (sb.length() < 4) {
             int index = (int) (rnd.nextFloat() * BASE36.length());
-            salt.append(BASE36.charAt(index));
+            sb.append(BASE36.charAt(index));
         }
-        return salt.toString();
+        return sb.toString();
     }
 }

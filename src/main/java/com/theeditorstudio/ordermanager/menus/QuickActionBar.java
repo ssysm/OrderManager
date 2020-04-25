@@ -12,7 +12,7 @@ import javax.swing.*;
 public class QuickActionBar extends JPanel{
     JPanel panel;
     JToolBar toolBar;
-    JButton addOrder, openDB;
+    JButton addOrder;
     public static JTextField orderID;
 
     /**
@@ -23,18 +23,15 @@ public class QuickActionBar extends JPanel{
         panel = new JPanel();
         toolBar = new JToolBar();
         addOrder = new JButton("Add Order");
-        openDB = new JButton("Open Database");
         orderID = new JTextField(10);
         // set swing options
         orderID.setToolTipText("Order ID Lookup");
         orderID.setText("Order ID");
         orderID.addKeyListener(new OrderIDLookupAction());
-        openDB.addActionListener(new OpenFileAction());
         addOrder.addActionListener(new NewOrderAction());
         // set layout
-        panel.add(openDB);
         panel.add(addOrder);
-        panel.add(new JLabel("ID Search:"));
+        panel.add(new JLabel("Order ID Search:"));
         panel.add(orderID);
         toolBar.add(panel);
         toolBar.setFloatable(false);

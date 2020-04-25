@@ -1,10 +1,7 @@
 Manifest-Version: 1.0
 Name: com/theeditorstudio/ordermanager
-Specification-Title: Order Manager Project
-Specification-Vendor: TheEditorStudio
-Specification-Version: Alpha 0.0.1_2 (Shengming Yuan)
 Implementation-Title: Order Manager Project
 Implementation-Vendor: TheEditorSdtuio
-Implementation-Version: Alpha 0.0.1_2 (Shengming Yuan)
+Implementation-Version: 0.0.2
 Main-Class: com.theeditorstudio.ordermanager.OrderManager
-Created-By: Alpha 0.0.1_2 (Shengming Yuan)
+Created-By: Shengming Yuan

@@ -6,7 +6,7 @@
 
     <groupId>com.theeditorstudio.ordermanager</groupId>
     <artifactId>OrderManager</artifactId>
-    <version>0.0.1_2</version>
+    <version>0.0.2</version>
     <packaging>jar</packaging>
     <name>Order Manager</name>
     <url>https://static.theeditorstudio.com/OrderManager/</url>
@@ -34,7 +34,6 @@
             <artifactId>commons-csv</artifactId>
             <version>1.8</version>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.jetbrains.intellij.java/java-gui-forms-rt -->
         <dependency>
             <groupId>com.jetbrains.intellij.java</groupId>
@@ -67,6 +66,12 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <resources>
+                        <resource>
+                            <directory>src/main/resources</directory>
+                            <filtering>false</filtering>
+                        </resource>
+                    </resources>
                 </configuration>
                 <executions>
                     <execution>

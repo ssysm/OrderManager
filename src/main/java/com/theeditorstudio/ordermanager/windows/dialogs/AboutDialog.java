@@ -14,7 +14,7 @@ public class AboutDialog {
                                             "<br/>\n" +
                                             "Written By: Shengming Yuan\n" +
                                             " <br/>\n" +
-                                            " Version: Alpha 0.0.1_2\n" +
+                                            " Version: " + OrderManager.class.getPackage().getImplementationVersion() +
                                             " </html>\n";
 
     public AboutDialog(){

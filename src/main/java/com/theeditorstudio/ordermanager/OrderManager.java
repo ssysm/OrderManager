@@ -8,11 +8,13 @@ import com.theeditorstudio.ordermanager.menus.QuickActionBar;
 import com.theeditorstudio.ordermanager.menus.TableCtxMenu;
 import com.theeditorstudio.ordermanager.models.OrderModel;
 import com.theeditorstudio.ordermanager.models.OrderTableModel;
+import com.theeditorstudio.ordermanager.windows.components.SplashScreen;
 import com.theeditorstudio.ordermanager.windows.components.StatusComponent;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class OrderManager extends JFrame {
@@ -30,9 +32,13 @@ public class OrderManager extends JFrame {
     JMenuBar menuBar = new MenuBarFactory().getMenuBar();
     JScrollPane scrollPane = new JScrollPane(table);
     JPopupMenu popupMenu = new TableCtxMenu().getPopupMenu();
+    Dimension windowSize = new Dimension(700, 500);
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         OrderManager orderManager = new OrderManager();
+        SplashScreen splashScreen = new SplashScreen();
+        splashScreen.show(3000);
+        splashScreen.hide();
         orderManager.run();
         // Initial File Chooser Open
         OpenFileAction openFileAction = new OpenFileAction();
@@ -41,18 +47,22 @@ public class OrderManager extends JFrame {
     }
 
     private void run(){
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         // Set Frame Options
-        frame.setMinimumSize(new Dimension(700, 500));
-        frame.setSize(700,500);
+        frame.setBounds((int) ((screenSize.getWidth() - windowSize.getWidth())/ 2),
+                (int) ((screenSize.getHeight() - windowSize.getHeight())/ 2),
+                (int) windowSize.getWidth(), (int) windowSize.getHeight()); // set center screen
+        frame.setMinimumSize(windowSize);
+        frame.setSize((int)windowSize.getWidth(),(int)windowSize.getHeight());
         frame.setTitle("Order Manager");
         frame.setLayout(new BorderLayout());
-        frame.setVisible(true);
         frame.setJMenuBar(menuBar);
         frame.add(toolbar, BorderLayout.NORTH);
         frame.add(scrollPane, BorderLayout.CENTER);
         frame.add(status, BorderLayout.PAGE_END);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.addWindowListener(new MainWindowAdapter());
+        frame.setVisible(true);
         // Set Table Options
         table.setAutoCreateRowSorter(true);
         table.setComponentPopupMenu(popupMenu);
