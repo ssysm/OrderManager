@@ -6,7 +6,7 @@
 
     <groupId>com.theeditorstudio.ordermanager</groupId>
     <artifactId>OrderManager</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.2_2</version>
     <packaging>jar</packaging>
     <name>Order Manager</name>
     <url>https://static.theeditorstudio.com/OrderManager/</url>
@@ -44,6 +44,11 @@
 
     <build>
         <finalName>OrderManager</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -66,12 +71,6 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <resources>
-                        <resource>
-                            <directory>src/main/resources</directory>
-                            <filtering>false</filtering>
-                        </resource>
-                    </resources>
                 </configuration>
                 <executions>
                     <execution>

@@ -72,7 +72,7 @@ public class SearchOrderByDateDialog extends JDialog {
     }
 
     private void createUIComponents() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         DateFormatter df = new DateFormatter(dateFormat);
         orderDate = new JFormattedTextField(df);
     }

@@ -1,6 +1,5 @@
 package com.theeditorstudio.ordermanager;
 
-import com.theeditorstudio.ordermanager.actions.menu.OpenFileAction;
 import com.theeditorstudio.ordermanager.adapters.MainWindowAdapter;
 import com.theeditorstudio.ordermanager.adapters.TableMouseAdapter;
 import com.theeditorstudio.ordermanager.menus.MenuBarFactory;
@@ -8,7 +7,7 @@ import com.theeditorstudio.ordermanager.menus.QuickActionBar;
 import com.theeditorstudio.ordermanager.menus.TableCtxMenu;
 import com.theeditorstudio.ordermanager.models.OrderModel;
 import com.theeditorstudio.ordermanager.models.OrderTableModel;
-import com.theeditorstudio.ordermanager.windows.components.SplashScreen;
+import com.theeditorstudio.ordermanager.windows.components.SplashScreenComponent;
 import com.theeditorstudio.ordermanager.windows.components.StatusComponent;
 
 import javax.swing.*;
@@ -34,11 +33,11 @@ public class OrderManager extends JFrame {
     JPopupMenu popupMenu = new TableCtxMenu().getPopupMenu();
     Dimension windowSize = new Dimension(700, 500);
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         OrderManager orderManager = new OrderManager();
-        SplashScreen splashScreen = new SplashScreen();
-        splashScreen.show(3000);
-        splashScreen.hide();
+        SplashScreenComponent splashScreenComponent = new SplashScreenComponent();
+        splashScreenComponent.show(3000);
+        splashScreenComponent.hide();
         orderManager.run();
         StatusComponent.updateStatus();
     }

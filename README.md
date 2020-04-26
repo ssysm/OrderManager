@@ -13,9 +13,15 @@ Requirements:
 - Java 11(or later)
 
 To run, [download](https://github.com/ssysm/OrderManager/releases) the latest version of the jar file or 
-[build](#Development-Instructions) ityour self.
+[build](#Development-Instructions) it your self.
+
+Once built/downloaded, run 
+```$bash
+java -jar path/to/OrderManager.jar
+```
 
 ## Development Instructions
+Change log can be found at: [CHANGELOG.md](CHANGELOG.md)
 ### Run@Intellij:
  
 Requirements:

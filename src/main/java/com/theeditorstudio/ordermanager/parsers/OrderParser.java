@@ -40,7 +40,7 @@ public class OrderParser {
             // Run down the entire table
             for (CSVRecord record : records) {
                 OrderModel orderModel = new OrderModel(
-                        LocalDate.parse(record.get("Create Date"), DateTimeFormatter.ofPattern("yyyy/MM/dd")),
+                        LocalDate.parse(record.get("Create Date"), DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                         record.get("Order ID"),
                         record.get("First Name"),
                         record.get("Last Name"),

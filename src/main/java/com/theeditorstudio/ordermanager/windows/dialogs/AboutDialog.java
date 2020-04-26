@@ -1,6 +1,7 @@
 package com.theeditorstudio.ordermanager.windows.dialogs;
 
 import com.theeditorstudio.ordermanager.OrderManager;
+import com.theeditorstudio.ordermanager.windows.components.SplashScreenComponent;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,8 +25,8 @@ public class AboutDialog {
         dialog.setSize(300,150);
         dialog.setMinimumSize(new Dimension(300,150));
         dialog.setMaximumSize(new Dimension(300,150));
-        dialog.setVisible(true);
         dialog.setLocationRelativeTo(OrderManager.frame);
+        dialog.setVisible(true);
     }
 
 }
