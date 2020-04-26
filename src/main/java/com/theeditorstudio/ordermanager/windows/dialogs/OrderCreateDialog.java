@@ -229,7 +229,7 @@ public class OrderCreateDialog extends JDialog {
      * Custom UI Input
      */
     private void createUIComponents() {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/mm/dd");
         DateFormatter df = new DateFormatter(dateFormat);
         orderDate = new JFormattedTextField(df);
         quantity = new JFormattedTextField();

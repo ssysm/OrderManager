@@ -40,9 +40,6 @@ public class OrderManager extends JFrame {
         splashScreen.show(3000);
         splashScreen.hide();
         orderManager.run();
-        // Initial File Chooser Open
-        OpenFileAction openFileAction = new OpenFileAction();
-        openFileAction.actionPerformed(null);
         StatusComponent.updateStatus();
     }
 
